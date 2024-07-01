@@ -29,7 +29,7 @@
                         <a class="nav-link active" aria-current="page" href="/">Películas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Actores</a>
+                        <a class="nav-link active" aria-current="page" href="#" id="ViewActor">Actores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Link</a>
@@ -53,7 +53,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Agregar Película</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <a type="button" class="btn-close"  href="/"></a>
                         </div>
                         <div class="modal-body">
                             <form class="row g-3 needs-validation" novalidate id="myForm">
@@ -103,8 +103,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <a  class="btn btn-secondary"
+                                        href="/">Cancelar</a>
                                     <button type="button" id="saveButton" class="btn btn-primary">Guardar </button>
                                 </div>
                             </form>
@@ -125,7 +125,19 @@
         </div>
 
     </div>
+
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2024–01 Desarrollo Web</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">Jhonatan Camilo Guarín Medina</li>
+          <li class="list-inline-item">Andrés Felipe Sanabria Lesmes</li>
+         
+        </ul>
+      </footer>
+
     <script src="scriptMovie.js"></script>
+    <script src="script_Actors.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
