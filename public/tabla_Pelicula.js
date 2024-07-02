@@ -33,18 +33,18 @@ fetch("https://graphql-peliculas.onrender.com", {
         // Add event listeners to delete buttons
         const deleteButtons = document.querySelectorAll('.deleteButton');
         deleteButtons.forEach(button => {
-            button.addEventListener('click', handleDelete);
+            button.addEventListener('click', handleDeletee);
         });
 
         // Add event listeners to edit buttons
         const editButtons = document.querySelectorAll('.editButton');
         editButtons.forEach(button => {
-            button.addEventListener('click', handleEdit);
+            button.addEventListener('click', handleEdit2);
         });
     })
     .catch(error => console.error('Error:', error));
 
-async function handleDelete(event) {
+async function handleDeletee(event) {
     const button = event.currentTarget;
     const movieId = button.getAttribute('data-id');
 
@@ -74,7 +74,7 @@ async function handleDelete(event) {
     }
 }
 
-function handleEdit(event) {
+function handleEdit2(event) {
     const button = event.currentTarget;
     const movieId = button.getAttribute('data-id');
     const row = button.closest('tr');
