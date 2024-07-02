@@ -83,7 +83,7 @@ async function renderTable() {
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel2">Tabla de Editar y Eliminar</h5>
-                            <a type="button" class="btn-close" href="#" id="Cerrar_Modal_Tabla"></a>
+                            <button type="button" class="btn-close" href="#" id="" ></button>
                         </div>
                         <div class="modal-body">
                             <table class="table">
@@ -304,7 +304,8 @@ function setupCancelButton() {
 
   cancelButton.addEventListener('click', closeModalAndResetForm);
   closeButton.addEventListener('click', closeModalAndResetForm);
-  closeButtonModal.addEventListener('click', closeModalAndResetForm);
+
+  
 }
 
 
