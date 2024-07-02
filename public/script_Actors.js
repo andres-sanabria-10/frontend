@@ -3,8 +3,11 @@ async function renderTable() {
   mainContainer.innerHTML = `
        <div class="d-flex justify-content-end">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal100">
+            <button type="button" class="btn btn-light ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal100">
                 Agregar Actor
+            </button>
+            <button type="button" class="btn btn-light ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal110">
+                Editar y Eliminar
             </button>
 
             <!-- Modal -->
@@ -68,6 +71,80 @@ async function renderTable() {
                     </div>
                 </div>
             </div>
+
+
+
+
+             <!-- Modal tabla de actor -->
+
+            <div class="modal fade" id="exampleModal110" tabindex="-1" aria-labelledby="exampleModalLabel2"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel2">Tabla de Editar y Eliminar</h5>
+                            <a type="button" class="btn-close" href="#" id="Cerrar_Modal_Tabla"></a>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellido</th>
+                                        <th scope="col">Fecha de Nacimiento</th>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Acciones</th>
+                                     
+                                    </tr>
+                                </thead>
+                                <tbody id="actorsTableBodys">
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- Edit ACTOR Modal -->
+            <div class="modal fade" id="editMovieModalActor" tabindex="-1" aria-labelledby="editMovieModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editMovieModalLabelActor">Editar Actor</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="ViewActor"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editMovieFormActor ">
+                                <input type="hidden" id="editActorId">
+                                <div class="mb-3">
+                                    <label for="editActorName" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="editActorName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editActorLastName" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" id="editActorLastName">
+                                </div>
+                               
+                                <button type="button" class="btn btn-primary" id="saveEditButtonActor">Guardar
+                                    Cambios</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container mt-4  " id="Primero">
             <div class="row" id="ActorContainer">
@@ -80,6 +157,9 @@ async function renderTable() {
   await fetchAndRenderActors();
   setupCancelButton();
   setupSaveButton();
+  document.dispatchEvent(new Event('actorsTableReady'));
+  document.dispatchEvent(new Event('probando'));
+  
 }
 
 // Mostrar las cards con actores
@@ -204,6 +284,8 @@ function setupSaveButton() {
 function setupCancelButton() {
   const cancelButton = document.getElementById('cancelButtonActor');
   const closeButton = document.getElementById('closeButtonActor');
+  const closeButtonModal = document.getElementById('Cerrar_Modal_Tabla');
+
   const modal = new bootstrap.Modal(document.getElementById('exampleModal100'));
 
   const closeModalAndResetForm = async function() {
@@ -222,4 +304,8 @@ function setupCancelButton() {
 
   cancelButton.addEventListener('click', closeModalAndResetForm);
   closeButton.addEventListener('click', closeModalAndResetForm);
+  closeButtonModal.addEventListener('click', closeModalAndResetForm);
 }
+
+
+
