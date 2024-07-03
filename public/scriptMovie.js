@@ -15,7 +15,7 @@ fetch("https://graphql-peliculas.onrender.com", {
             const movieCard = `
                 <div class="col-sm-4 mb-4">
                     <div class="card">
-                        <img src="${movie.image}" class="card-img-top" alt="Imagen no disponible" width="100%" height="400px">
+                        <img src="${movie.image}" class="card-img-top" alt="Imagen no disponible" width="85%" height="400px">
                         <div class="card-body">
                            <span class="card-title"><span style="font-weight: bold;">Título:</span> ${movie.title}</span>
                            <br>
