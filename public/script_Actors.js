@@ -83,7 +83,7 @@ async function renderTable() {
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel2">Tabla de Editar y Eliminar</h5>
-                            <button type="button" class="btn-close" href="#" id="" ></button>
+                            <a href="#" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
                         </div>
                         <div class="modal-body">
                             <table class="table">
